@@ -7,10 +7,12 @@ import {
   matchPath,
   Redirect
 } from "react-router-dom";
+
+import Home from "./Home"
+
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
 
-import Navigation from "./Navigation.js"
 
 class App extends React.Component {
   constructor(props) {
@@ -28,26 +30,14 @@ class App extends React.Component {
           <h2>Find your own path</h2>
         </section>
 
-        <Router>
-          <main className="container">
-            <div className="row">
-
-              <Navigation>
-                <Link to="/home" className="nav-link active">Home</Link>
-              </Navigation>
-
-              <div className="card col" style={{ "width": "18rem;" }}>
-                {/* <img src="..." className="card-img-top" alt="..." /> */}
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p clasclassNames="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="google.com" className="btn btn-primary">Go somewhere</a>
-                </div>
-              </div >
-
-            </div>
-          </main>
-        </Router>
+        <main>
+          <Router>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/home" component={Home} />
+            </Switch>
+          </Router>
+        </main>
 
       </>
     );
