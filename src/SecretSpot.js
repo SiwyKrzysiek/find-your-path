@@ -14,7 +14,7 @@ export default function SecretSpot(props) {
         <div className="card col" style={{ width: "18rem" }}>
           <div className="card-body">
             <h5 className="card-title">Secret spot</h5>
-            <p className="card-text">You've managed to get inside the chest and found this secret place!</p>
+            <p className="lead card-text">You've managed to get inside the chest and found this secret place! <b>Congratulations!!!</b></p>
           </div>
         </div >
 
