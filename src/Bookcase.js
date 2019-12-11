@@ -1,9 +1,9 @@
-import React from "react"
-import PropTypes from 'prop-types';
-import { Link, Redirect, withRouter } from "react-router-dom"
-import Navigation from "./Navigation"
+import React from "react";
+import PropTypes from "prop-types";
+import { Link, Redirect, withRouter } from "react-router-dom";
+import Navigation from "./Navigation";
 
-import BookDTO from "./model/Book"
+import BookDTO from "./model/Book";
 
 function Bookcase(props) {
     let bookSelect = React.createRef();
@@ -12,7 +12,12 @@ function Bookcase(props) {
         const bookId = bookSelect.current.value;
         const url = `${props.match.url}/${bookId}`;
         props.history.push(url);
-    }
+    };
+
+    const handleBookClose = () => {
+        const url = `${props.match.url}`;
+        props.history.push(url);
+    };
 
     return (
         <div className="container">
@@ -38,7 +43,7 @@ function Bookcase(props) {
                                 </select>
                                 <div className="input-group-append">
                                     <button onClick={handleBookOpen} className="btn btn-outline-secondary" type="button">Open</button>
-                                    <button className="btn btn-outline-secondary" type="button">Close</button>
+                                    <button onClick={handleBookClose} className="btn btn-outline-secondary" type="button">Close</button>
                                 </div>
                             </div>
                         </form>
