@@ -8,6 +8,7 @@ import BookDTO from "./model/Book";
 
 function Bookcase(props) {
   let bookSelect = React.createRef();
+  const books = props.books;
 
   const handleBookOpen = () => {
     const bookId = bookSelect.current.value;
@@ -51,7 +52,9 @@ function Bookcase(props) {
 
             <Router>
               <Route path={props.match.path + "/:idBook"} render={(props) => (
-                <Book {...props} books={props.books} />)
+                <Book {...props} book={
+                  books.find((b) => b.id == props.match.params.idBook)
+                } />)
               } />
             </Router>
 

@@ -2,12 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import BookDTO from "./model/Book";
 
-export default function Book(props) {
+export default function Book({ book }) {
   return (
-    <div>{props.match.params.idBook}</div>
+    <div>{book.title}</div>
   );
 }
 
 Book.propTypes = {
-  books: PropTypes.arrayOf(BookDTO).isRequired
+  book: PropTypes.instanceOf(BookDTO).isRequired
 };
