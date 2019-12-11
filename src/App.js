@@ -1,7 +1,16 @@
 import React from 'react';
-// import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  matchPath,
+  Redirect
+} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css'
+import './App.css';
+
+import Navigation from "./Navigation.js"
 
 class App extends React.Component {
   constructor(props) {
@@ -22,25 +31,7 @@ class App extends React.Component {
         <main className="container">
           <div className="row">
 
-            <div className="card col-3 navigation">
-              <div className="card-body">
-                <h5 className="card-title">Navigation</h5>
-                <ul class="nav flex-column">
-                  <li class="nav-item">
-                    <a class="nav-link active" href="#">Active</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <Navigation></Navigation>
 
             <div className="card col" style={{ "width": "18rem;" }}>
               {/* <img src="..." className="card-img-top" alt="..." /> */}
