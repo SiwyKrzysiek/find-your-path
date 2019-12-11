@@ -1,15 +1,17 @@
 import React from "react"
 import PropTypes from 'prop-types';
-import { Link, Redirect } from "react-router-dom"
+import { Link, Redirect, withRouter } from "react-router-dom"
 import Navigation from "./Navigation"
 
 import BookDTO from "./model/Book"
 
-export default function Bookcase(props) {
+function Bookcase(props) {
     let bookSelect = React.createRef();
 
     const handleBookOpen = () => {
-        console.log(bookSelect.current.value)
+        const bookId = bookSelect.current.value;
+        const url = `${props.match.url}/${bookId}`;
+        props.history.push(url);
     }
 
     return (
@@ -52,3 +54,5 @@ export default function Bookcase(props) {
 // Bookcase.propTypes = {
 //     books: PropTypes.arrayOf(BookDTO)
 // }
+
+export default withRouter(Bookcase)
