@@ -13,6 +13,7 @@ import Home from "./Home"
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
 import Cellar from './Cellar';
+import Bookcase from './Bookcase';
 
 
 class App extends React.Component {
@@ -37,6 +38,7 @@ class App extends React.Component {
               <Route exact path="/" component={Home} />
               <Route path="/home" component={Home} />
               <Route path="/cellar" component={Cellar} />
+              <Route path="/bookcase" component={Bookcase} />
             </Switch>
           </Router>
         </main>
