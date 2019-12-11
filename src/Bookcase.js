@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, Redirect, withRouter } from "react-router-dom";
+import { Link, withRouter, HashRouter as Router, Route } from "react-router-dom";
 import Navigation from "./Navigation";
+import Book from "./Book";
 
 import BookDTO from "./model/Book";
 
@@ -48,6 +49,12 @@ function Bookcase(props) {
               </div>
             </form>
 
+            <Router>
+              <Route path={props.match.path + "/:idBook"} render={(props) => (
+                <Book {...props} books={props.books} />)
+              } />
+            </Router>
+
           </div>
         </div >
 
@@ -57,7 +64,7 @@ function Bookcase(props) {
 }
 
 // Bookcase.propTypes = {
-//     books: PropTypes.arrayOf(BookDTO)
-// }
+//   books: PropTypes.arrayOf(BookDTO)
+// };
 
 export default withRouter(Bookcase);
