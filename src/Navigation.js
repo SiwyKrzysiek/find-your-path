@@ -6,7 +6,7 @@ export default function Navigation(props) {
             <div className="card-body">
                 <h5 className="card-title">Next place</h5>
 
-                <ul class="nav nav-pills flex-column">
+                <ul className="nav nav-pills flex-column">
                     {React.Children.map(props.children, (child, i) => (
                         <li className="nav-item">
                             {child}

@@ -14,14 +14,15 @@ import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
 import Cellar from './Cellar';
 import Bookcase from './Bookcase';
-
+import { createSampleBooks } from "./model/Book"
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      logged: false
+      logged: false,
+      books: createSampleBooks()
     }
   }
 
@@ -38,11 +39,12 @@ class App extends React.Component {
               <Route exact path="/" component={Home} />
               <Route path="/home" component={Home} />
               <Route path="/cellar" component={Cellar} />
-              <Route path="/bookcase" component={Bookcase} />
+              <Route path="/bookcase" render={(props) => (
+                <Bookcase {...props} books={this.state.books} />)
+              } />
             </Switch>
           </Router>
         </main>
-
       </>
     );
   }
