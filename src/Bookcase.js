@@ -18,6 +18,23 @@ export default function Bookcase(props) {
                     <div className="card-body">
                         <h5 className="card-title">Bookcase</h5>
                         <p className="card-text">Here you can take and reed books. One of them is <b>special</b>.</p>
+
+                        <p className="card-text">If You want to take book of shelf select it and confirm.</p>
+
+                        <form>
+                            <div className="input-group">
+                                <select className="custom-select">
+                                    {props.books.map((book, i) => (
+                                        <option key={i} value={book.id}>{book.title}</option>
+                                    ))}
+                                </select>
+                                <div className="input-group-append">
+                                    <button className="btn btn-outline-secondary" type="button">Open</button>
+                                    <button className="btn btn-outline-secondary" type="button">Close</button>
+                                </div>
+                            </div>
+                        </form>
+
                     </div>
                 </div >
 
@@ -26,6 +43,6 @@ export default function Bookcase(props) {
     );
 }
 
-Bookcase.propTypes = {
-    books: PropTypes.arrayOf(BookDTO)
-}
+// Bookcase.propTypes = {
+//     books: PropTypes.arrayOf(BookDTO)
+// }
