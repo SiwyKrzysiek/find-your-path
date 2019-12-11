@@ -2,7 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 import BookDTO from "./model/Book";
 
-export default function Book({ book }) {
+export default function Book({ book, onLogin }) {
+  const loginInput = React.createRef();
+  const passwordInput = React.createRef();
+
+  // console.log(onLogin);
+  // onLogin("a", "b");
+
+  const handleSubmit = () => {
+    onLogin(loginInput.current.value, passwordInput.current.value);
+  };
+
   return (
     <section>
       <hr />
@@ -13,13 +23,13 @@ export default function Book({ book }) {
         <form>
           <div className="form-group">
             <label htmlFor="exampleInputEmail1">Login</label>
-            <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+            <input ref={loginInput} type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
           </div>
           <div className="form-group">
             <label htmlFor="exampleInputPassword1">Password</label>
-            <input type="password" className="form-control" id="exampleInputPassword1" />
+            <input ref={passwordInput} type="password" className="form-control" id="exampleInputPassword1" />
           </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <button onClick={handleSubmit} type="button" className="btn btn-primary">Submit</button>
         </form>
       }
 

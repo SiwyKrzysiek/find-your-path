@@ -24,6 +24,15 @@ class App extends React.Component {
       logged: false,
       books: createSampleBooks()
     };
+
+    // this.authenticate = this.authenticate.bind(this);
+  }
+
+  authenticate = (login, password) => {
+    // Everyone is authenticated
+    // this.setState({ logged: true });
+    console.log(login, password);
+    console.log("You have been logged in");
   }
 
   render() {
@@ -40,7 +49,7 @@ class App extends React.Component {
               <Route path="/home" component={Home} />
               <Route path="/cellar" component={Cellar} />
               <Route path="/bookcase" render={(props) => (
-                <Bookcase {...props} books={this.state.books} />)
+                <Bookcase {...props} onLogin={this.authenticate} books={this.state.books} />)
               } />
             </Switch>
           </Router>
