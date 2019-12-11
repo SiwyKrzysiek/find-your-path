@@ -45,7 +45,7 @@ function Bookcase(props) {
                 </select>
                 <div className="input-group-append">
                   <button onClick={handleBookOpen} className="btn btn-outline-secondary" type="button">Open</button>
-                  <button onClick={handleBookClose} className="btn btn-outline-secondary" type="button">Close</button>
+                  <button onClick={handleBookClose} className="btn btn-outline-secondary" type="button">Close book</button>
                 </div>
               </div>
             </form>

@@ -4,7 +4,11 @@ import BookDTO from "./model/Book";
 
 export default function Book({ book }) {
   return (
-    <div>{book.title}</div>
+    <section>
+      <hr />
+      <h3 className="text-center display-4">{book.title}</h3>
+      <p className="lead">{book.content}</p>
+    </section>
   );
 }
 

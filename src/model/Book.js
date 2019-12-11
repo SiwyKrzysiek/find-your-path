@@ -1,8 +1,8 @@
 export default class BookDTO {
-  constructor(id, title, contetn) {
+  constructor(id, title, content) {
     this.id = id;
     this.title = title;
-    this.contetn = contetn;
+    this.content = content;
   }
 }
 
