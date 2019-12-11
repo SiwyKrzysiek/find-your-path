@@ -12,6 +12,7 @@ import Home from "./Home"
 
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
+import Cellar from './Cellar';
 
 
 class App extends React.Component {
@@ -35,6 +36,7 @@ class App extends React.Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/home" component={Home} />
+              <Route path="/cellar" component={Cellar} />
             </Switch>
           </Router>
         </main>
