@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
 export default function Navigation(props) {
     return (
@@ -8,16 +9,16 @@ export default function Navigation(props) {
                 <h5 className="card-title">Navigation</h5>
 
                 <ul class="nav nav-pills flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Active</a>
+                    <li className="nav-item">
+                        <Link to="/home" className="nav-link active">Home</Link>
                     </li>
-                    <li class="nav-item">
+                    <li className="nav-item">
                         <a class="nav-link" href="#">Link</a>
                     </li>
-                    <li class="nav-item">
+                    <li className="nav-item">
                         <a class="nav-link" href="#">Link</a>
                     </li>
-                    <li class="nav-item">
+                    <li className="nav-item">
                         <a class="nav-link disabled" href="#">Disabled</a>
                     </li>
                 </ul>
