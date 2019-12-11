@@ -1,11 +1,17 @@
 import React from "react"
 import PropTypes from 'prop-types';
-import { Link } from "react-router-dom"
+import { Link, Redirect } from "react-router-dom"
 import Navigation from "./Navigation"
 
 import BookDTO from "./model/Book"
 
 export default function Bookcase(props) {
+    let bookSelect = React.createRef();
+
+    const handleBookOpen = () => {
+        console.log(bookSelect.current.value)
+    }
+
     return (
         <div className="container">
             <div className="row">
@@ -23,13 +29,13 @@ export default function Bookcase(props) {
 
                         <form>
                             <div className="input-group">
-                                <select className="custom-select">
+                                <select ref={bookSelect} className="custom-select">
                                     {props.books.map((book, i) => (
                                         <option key={i} value={book.id}>{book.title}</option>
                                     ))}
                                 </select>
                                 <div className="input-group-append">
-                                    <button className="btn btn-outline-secondary" type="button">Open</button>
+                                    <button onClick={handleBookOpen} className="btn btn-outline-secondary" type="button">Open</button>
                                     <button className="btn btn-outline-secondary" type="button">Close</button>
                                 </div>
                             </div>
