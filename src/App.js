@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  HashRouter as Router,
+  HashRouter as Router, // Browser router doesn't work with Github pages
   Route,
   Link,
   Switch,

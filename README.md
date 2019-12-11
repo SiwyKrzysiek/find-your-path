@@ -1,3 +1,9 @@
+# Find your path
+
+Simple "game" made for learning React Router.
+
+Project is deployed [here](https://siwykrzysiek.github.io/find-your-path)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
