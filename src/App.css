@@ -8,6 +8,10 @@
   text-align: center;
 }
 
+.navigation {
+  margin-right: 2rem;
+}
+
 .App-link {
   color: #61dafb;
 }
