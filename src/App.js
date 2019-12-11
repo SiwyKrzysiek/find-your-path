@@ -30,7 +30,7 @@ class App extends React.Component {
 
   authenticate = (login, password) => {
     // Everyone is authenticated
-    // this.setState({ logged: true });
+    this.setState({ logged: true });
     console.log(login, password);
     console.log("You have been logged in");
   }
@@ -49,7 +49,7 @@ class App extends React.Component {
               <Route path="/home" component={Home} />
               <Route path="/cellar" component={Cellar} />
               <Route path="/bookcase" render={(props) => (
-                <Bookcase {...props} onLogin={this.authenticate} books={this.state.books} />)
+                <Bookcase {...props} logged={this.state.logged} onLogin={this.authenticate} books={this.state.books} />)
               } />
             </Switch>
           </Router>

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import BookDTO from "./model/Book";
 
-export default function Book({ book, onLogin }) {
+export default function Book({ book, onLogin, logged }) {
   const loginInput = React.createRef();
   const passwordInput = React.createRef();
 
@@ -19,7 +19,7 @@ export default function Book({ book, onLogin }) {
       <h3 className="text-center display-4">{book.title}</h3>
       <p className="lead">{book.content}</p>
 
-      {book.isLogin &&
+      {book.isLogin && !logged ?
         <form>
           <div className="form-group">
             <label htmlFor="exampleInputEmail1">Login</label>
@@ -31,6 +31,8 @@ export default function Book({ book, onLogin }) {
           </div>
           <button onClick={handleSubmit} type="button" className="btn btn-primary">Submit</button>
         </form>
+        :
+        <p>You feel that something has changed</p>
       }
 
     </section>
