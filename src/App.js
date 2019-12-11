@@ -32,7 +32,9 @@ class App extends React.Component {
           <main className="container">
             <div className="row">
 
-              <Navigation></Navigation>
+              <Navigation>
+                <Link to="/home" className="nav-link active">Home</Link>
+              </Navigation>
 
               <div className="card col" style={{ "width": "18rem;" }}>
                 {/* <img src="..." className="card-img-top" alt="..." /> */}
