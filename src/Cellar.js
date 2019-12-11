@@ -18,8 +18,8 @@ export default function Cellar(props) {
             <p>Message: &quot;You must be logged to open me&quot;</p>
 
             <div className="my-auto d-flex justify-content-center">
-              <button type="button" className="btn btn-lg btn-primary mr-2" disabled={!props.logged}>Open gently</button>
-              <button type="button" className="btn btn-secondary btn-lg">Force open</button>
+              <Link to="/secret"><button type="button" className="btn btn-lg btn-primary mr-2" disabled={!props.logged}>Open gently</button></Link>
+              <Link to="/secret"><button type="button" className="btn btn-secondary btn-lg">Force open</button></Link>
             </div>
 
           </div>

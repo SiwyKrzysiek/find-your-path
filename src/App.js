@@ -12,8 +12,11 @@ import Home from "./Home";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
+import PrivateRoute from "./PrivateRoute";
 import Cellar from "./Cellar";
 import Bookcase from "./Bookcase";
+import SecretSpot from "./SecretSpot";
+import Outside from "./Outside";
 import { createSampleBooks } from "./model/Book";
 
 class App extends React.Component {
@@ -51,6 +54,8 @@ class App extends React.Component {
               <Route path="/bookcase" render={(props) => (
                 <Bookcase {...props} logged={this.state.logged} onLogin={this.authenticate} books={this.state.books} />)
               } />
+              <PrivateRoute path="/secret" isAuthenticated={this.state.logged} failPath="/outside" component={SecretSpot} />
+              <Route path="/outside" component={Outside} />
             </Switch>
           </Router>
         </main>
