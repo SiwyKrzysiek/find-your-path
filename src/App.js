@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Link,
   Switch,
@@ -8,13 +8,13 @@ import {
   Redirect
 } from "react-router-dom";
 
-import Home from "./Home"
+import Home from "./Home";
 
-import 'bootstrap/dist/css/bootstrap.css'
-import './App.css';
-import Cellar from './Cellar';
-import Bookcase from './Bookcase';
-import { createSampleBooks } from "./model/Book"
+import "bootstrap/dist/css/bootstrap.css";
+import "./App.css";
+import Cellar from "./Cellar";
+import Bookcase from "./Bookcase";
+import { createSampleBooks } from "./model/Book";
 
 class App extends React.Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class App extends React.Component {
     this.state = {
       logged: false,
       books: createSampleBooks()
-    }
+    };
   }
 
   render() {
