@@ -15,7 +15,6 @@ export default function Bookcase(props) {
                 </Navigation>
 
                 <div className="card col" style={{ width: "18rem" }}>
-                    {/* <img src="..." className="card-img-top" alt="..." /> */}
                     <div className="card-body">
                         <h5 className="card-title">Bookcase</h5>
                         <p className="card-text">Here you can take and reed books. One of them is <b>special</b>.</p>

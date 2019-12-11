@@ -12,7 +12,6 @@ export default function Cellar(props) {
                 </Navigation>
 
                 <div className="card col" style={{ width: "18rem" }}>
-                    {/* <img src="..." className="card-img-top" alt="..." /> */}
                     <div className="card-body">
                         <h5 className="card-title">Cellar</h5>
                         <p className="card-text">Here you can find locked chest with wierd message scrambled on top.</p>
